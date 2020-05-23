@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Join</title>
+    <meta name="description" content="Chat" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'chat/normalize.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'chat/main.css' %}"
+    />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{% static 'chat/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript">
+      $(function () {
+        $("#join-form").submit(function () {
+          var user = $("#name-input").val().toLowerCase();
+          var room = $("#room-input").val();
+          if (user) {
+            window.location = "/" + room + "?user=" + user;
+          }
+          return false;
+        });
+
+        $("#name-input").focus();
+      });
+    </script>
+  </head>
+  <body>
+    <p class="app_name">Chat'way <i class="far fa-comments"></i></p>
+    <div id="join-elements">
+      <form id="join-form">
+        <input type="text" id="name-input" placeholder="Nickname" /><br /><br />
+        <input
+          type="text"
+          id="room-input"
+          placeholder="Chat Room Number"
+        /><br /><br />
+        <input type="submit" id="join-button" value="Join" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  padding: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #555;
+  background-color: #e3e3e3;
+}
+h4 {
+  color: #7ed321;
+}
+input {
+  color: #333;
+
+  width: 100%;
+  padding: 1em;
+  line-height: 1.4;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-transition: 0.35s ease-in-out;
+  -moz-transition: 0.35s ease-in-out;
+  -o-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+input:focus {
+  outline: 0;
+  border-color: #00a79d;
+}
+button[type="submit"] {
+  background: #00a79d;
+  color: white;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ccc;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ccc;
+}
+
+#join-form {
+  position: absolute;
+  margin: auto;
+  width: 280px;
+  height: 120px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+#join-button {
+  background: #00a79d;
+  color: white;
+  margin-top: 5px;
+}
+
+#chat-header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #999;
+  margin: 0;
+}
+
+#chat-elements {
+  position: fixed;
+  top: 62px;
+  left: 36px;
+  right: 20px;
+  bottom: 90px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#chat-input-area {
+  background-color: #e3e3e3;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+#chat-input {
+  width: 80%;
+}
+#chat-send-button {
+  background: rgb(0, 225, 255);
+  display: inline-block;
+  width: 19%;
+}
+
+#user-label {
+  float: right;
+  padding-right: 16px;
+}
+
+#code-link {
+  float: right;
+  margin-right: 16px;
+}
+
+@media (max-width: 759px) {
+  body {
+    padding: 0;
+  }
+  #chat-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  #chat-elements {
+    position: relative;
+    z-index: 1;
+  }
+  #chat-elements {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    opacity: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+  #chat-log {
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 60px;
+  }
+  #chat-input-area {
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  #send-form {
+    position: relative;
+    display: block;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+  }
+  #chat-input {
+    width: 74%;
+  }
+  #chat-send-button {
+    width: 22%;
+  }
+}
+.msg-list {
+  width: 100%;
+}
+.messenger-container {
+  padding: 8px 15px 8px 13px;
+  margin: 0 0 25px 35px;
+  float: left;
+  max-width: 82%;
+  background: rgb(206, 206, 206);
+  border-radius: 10px;
+  min-width: 20%;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 7px 10px 6px -5px #bbc0c7;
+}
+.messenger-container p {
+  color: black;
+  font-size: 12px;
+  margin-bottom: 6px;
+  line-height: 18px;
+  word-wrap: break-word;
+  margin: 0;
+}
+.sender .messenger-container {
+  float: right;
+  margin-right: 35px;
+  width: auto;
+  background: #00a79d;
+  margin-left: 0px;
+  padding: 8px 15px 8px 13px;
+}
+.clear {
+  clear: both;
+  width: 100%;
+  padding: 0px !important;
+  margin: 0px;
+  height: 0px;
+}
+.messenger-container::before {
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+
+  border-right: 15px solid #f2f2f2;
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -15px;
+}
+.sender .messenger-container::before {
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 15px solid #d5dbff;
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 99%;
+  border-right: none;
+}
+
+.app_name {
+  text-align: center;
+  font-size: 64px;
+  -webkit-animation: color-change 4s infinite;
+  -moz-animation: color-change 4s infinite;
+  -o-animation: color-change 4s infinite;
+  -ms-animation: color-change 4s infinite;
+  animation: color-change 4s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    color: green;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: green;
+  }
+}
+@-moz-keyframes color-change {
+  0% {
+    color: green;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: green;
+  }
+}
+@-ms-keyframes color-change {
+  0% {
+    color: green;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: green;
+  }
+}
+@-o-keyframes color-change {
+  0% {
+    color: green;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: green;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: green;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: red;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: green;
+  }
+}
+
+body {
+  background-image: url("https://api.androidhive.info/res/bg_messages.png");
+}
